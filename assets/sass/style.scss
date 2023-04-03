@@ -1,0 +1,15 @@
+@import './utils/variables';
+@import './base/font';
+@import './utils/loader';
+@import './utils/animations';
+@import './utils/transition';
+@import './layout/header';
+@import './pages/acceuil';
+@import './layout/footer';
+@import './pages/restaurants';
+* {
+    font-family: "Roboto";
+}
+body {
+    margin: auto; 
+}

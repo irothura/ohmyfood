@@ -1,0 +1,73 @@
+@mixin default_heart {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 0;
+    left: 0;
+    font-size: 25px;
+    background: $pink;
+    -webkit-background-clip: text;
+    background-clip: text;          
+    animation: toDown 0.5s forwards;
+}
+
+@mixin heart_animation {
+    animation: toUp 0.5s linear;
+}
+
+@keyframes toDown {
+    0% {
+        opacity:1;
+        background: linear-gradient(to bottom, $pink);
+        -webkit-background-clip: text;
+    }
+    25% {
+        opacity: 0.75;
+        background: linear-gradient(to bottom, transparent, $pink);
+        -webkit-background-clip: text;
+    }
+    50% {
+        opacity: 0.5;
+        background: linear-gradient(to bottom, transparent, $pink);
+        -webkit-background-clip: text;
+    }
+    75% {
+        opacity: 0.25;
+        background: linear-gradient(to bottom, transparent, $pink);
+        -webkit-background-clip: text;
+    }
+    100% {
+        opacity:0;
+        background: linear-gradient(to bottom,transparent ,transparent, transparent);
+        -webkit-background-clip: text;
+    }
+}
+
+@keyframes toUp {
+    0% {
+        opacity: 0;
+        background: linear-gradient(to bottom,transparent ,transparent, transparent);
+        -webkit-background-clip: text;
+    }
+    25% {
+        opacity: 0.25;
+        background: linear-gradient(to bottom,transparent , $pink);
+        -webkit-background-clip: text;
+    }
+    50% {
+        opacity: 0.5;
+        background: linear-gradient(to bottom, transparent , $pink);
+        -webkit-background-clip: text;
+    }
+    75% {
+        opacity: 0.75;
+        background: linear-gradient(to bottom, transparent , $pink);
+        -webkit-background-clip: text;
+    }
+    100% {
+        opacity: 1;
+        background: linear-gradient(to bottom , $pink);
+        -webkit-background-clip: text;
+    }
+}
+

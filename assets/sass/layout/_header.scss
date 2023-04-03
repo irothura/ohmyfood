@@ -1,0 +1,30 @@
+.header {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin: auto;
+    &-logo {
+        padding-top: 20px;
+        width: 160px;
+        padding-bottom: 15px;
+    }
+    &-arrow {
+        font-size: 20px;
+        position: absolute;
+        top: 25px;
+        left: 30px;
+        color: #000000;
+        -webkit-transition: all 2s ease;
+        -moz-transition: all 2s ease;
+        -ms-transition: all 2s ease;
+        -o-transition: all 2s ease;
+        transition: .2s linear;
+    }
+    &-arrow:hover {
+        -webkit-transform: scale(1.5);
+        -moz-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+        -o-transform: scale(1.5);
+        transform: scale(1.5);
+    }
+}

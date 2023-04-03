@@ -1,0 +1,197 @@
+@import '../utils/transition';
+
+.main-img {
+    object-fit: cover;
+    width: 100%;
+    height: 400px;
+}
+
+.menu {
+    padding: 0 15px;
+    position: relative;
+    top: -70px;
+    border-radius: 20px 20px 0 0;
+    background-color: #f0f0f0;
+    margin: auto;
+    &-title {
+        h1 {
+            font-family: "Shrikhand";
+            font-size: 25px;
+            padding-top: 20px;
+        }
+    }
+    &-heart-icon {
+        position: absolute;
+        z-index: 0;
+        top: 25px;
+        right: 40px;
+        font-size: 25px;
+        background: #000000;
+        color: transparent;
+        overflow: hidden;
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+    .entrance {
+        display: flex;
+        flex-direction: column;
+        h3 {
+            padding-top: 10px;
+            font-size: 16px;
+        }
+        h3::after {
+            display: block;
+            content: '';
+            border-bottom: 3px solid $green;
+            padding-top: 5px;
+            width: 35px;
+        }
+    }
+    .course {
+        display: flex;
+        flex-direction: column;
+        h3 {
+            padding-top: 10px;
+            font-size: 16px;
+        }
+        h3::after {
+            display: block;
+            content: '';
+            border-bottom: 3px solid $green;
+            padding-top: 5px;
+            width: 35px;
+        }
+    }
+    .dessert {
+        display: flex;
+        flex-direction: column;
+        h3 {
+            padding-top: 10px;
+            font-size: 16px;
+        }
+        h3::after {
+            display: block;
+            content: '';
+            border-bottom: 3px solid $green;
+            padding-top: 5px;
+            width: 35px;
+        }
+    }
+    .stack {
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        cursor: pointer;
+        position: relative;
+        opacity: 0;
+        animation: transition 1.5s linear forwards;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        box-shadow: 1px 1px 5px #9c9c9c;
+        padding: 10px;
+        margin: 5px 0;
+        h4 {
+            font-size: 18px;
+            margin: 3px 0;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        .secondary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            p {
+                font-size: 16px;
+                margin: 3px 0;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+            span {
+                font-size: 16px;
+                display: inline;
+                font-weight: bold;
+                margin-right: 10px;
+            }
+        }
+        .stack-icon {
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $green;
+            width: 20px;
+            height: 65px;
+            position: absolute;
+            padding: 20px;
+            right: -50px;
+            top: 0;
+            opacity: 0;
+            transition: transform 330ms ease-in-out;
+            padding-top: 3px;
+            .stack-check {
+                color: #fff;
+                transition: transform 500ms ease-in-out;
+            }
+        }
+    }
+    .stack:hover {
+        padding-right: 75px;
+        .stack-icon {
+            opacity: 1;
+            transform: translate(-50px);
+        }
+        .stack-check {
+            transform: rotate(360deg);
+        }
+    }
+    .stack:not(:hover) {
+        padding-right: 0;
+        .stack-icon {
+            opacity: 1;
+            transform: translate(50px);
+        }
+        .stack-check {
+            transform: rotate(-360deg);
+        }
+    }
+    .menu-heart-icon>i {
+        @include default_heart
+    }
+    .menu-heart-icon:hover>i {
+        @include heart_animation
+    }
+    .order {
+        background-color: #f0f0f0;
+        text-align: center;
+        &-button {
+            color: #fff;
+            margin-top: 30px;
+            background: linear-gradient($pink ,$purple);
+            border: none;
+            box-shadow: 0px 2px 7px -3px rgba(0,0,0,0.4);
+            border-radius: 25px; 
+            padding: 15px 35px;
+            font-size: 16px;
+            &:hover {
+                box-shadow: 0px 2px 7px -2px rgba(0,0,0,0.9);
+                background: linear-gradient(#ff75d8 ,#a161f0);
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .menu {
+        width: 75%;
+        &-title {
+            display: flex;
+            justify-content: center;
+        }
+        &-heart-icon {
+            top: 40px;
+        }
+    }
+}
