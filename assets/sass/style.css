@@ -484,12 +484,15 @@
   }
 }
 .footer {
-  width: 100%;
   display: flex;
   flex-direction: column;
   background-color: #363535;
   color: #fff;
   padding: 0 20px 30px;
+}
+.footer-stack {
+  display: flex;
+  flex-direction: column;
 }
 .footer-brand {
   font-family: "Shrikhand";
@@ -511,9 +514,16 @@
 
 @media screen and (min-width: 768px) {
   .footer {
+    display: flex;
     flex-direction: row-reverse;
-    align-items: center;
-    justify-content: space-around;
+    align-items: end;
+    justify-content: end;
+  }
+  .footer-stack {
+    flex-direction: row;
+  }
+  .footer-content {
+    padding-left: 50px;
   }
 }
 @keyframes transition {
@@ -578,23 +588,25 @@
 }
 
 .menu {
-  padding: 0 15px;
+  padding: 0 15px 30px;
   position: relative;
-  top: -70px;
   border-radius: 20px 20px 0 0;
   background-color: #f0f0f0;
   margin: auto;
+  margin-top: -70px;
+}
+.menu-title {
+  display: flex;
+  align-items: center;
+  padding-top: 20px;
+  gap: 30px;
 }
 .menu-title h1 {
   font-family: "Shrikhand";
   font-size: 25px;
-  padding-top: 20px;
 }
 .menu-heart-icon {
-  position: absolute;
   z-index: 0;
-  top: 25px;
-  right: 40px;
   font-size: 25px;
   background: #000000;
   color: transparent;
@@ -766,11 +778,7 @@
     width: 75%;
   }
   .menu-title {
-    display: flex;
     justify-content: center;
-  }
-  .menu-heart-icon {
-    top: 40px;
   }
 }
 * {
