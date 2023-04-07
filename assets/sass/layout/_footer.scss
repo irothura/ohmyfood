@@ -31,13 +31,18 @@
     .footer {
         display: flex;
         flex-direction: row-reverse;
-        align-items: end;
+        align-items: center;
         justify-content: end;
+        padding: 30px 70px 10px;
         &-stack {
+            display: flex;
             flex-direction: row;
         }
         &-content {
-            padding-left: 50px;
+            margin-left: 70px;
+        }
+        &-brand {
+            margin-left: 120px;
         }
     }
 }
